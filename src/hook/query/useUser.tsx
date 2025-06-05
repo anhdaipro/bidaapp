@@ -1,6 +1,6 @@
 import { useQuery,useMutation,useQueryClient } from '@tanstack/react-query';
-import { apiCreateCustomer, apiFindCustomer, apiGetAllCustomer, apigetUser, apiLogin, apiSearchCustomer, apiUpdateCustomer } from '../api/apiUser';
-import { CustomerFormSearch } from '../type/model/Customer';
+import { apiCreateCustomer, apiFindCustomer, apiGetAllCustomer, apigetUser, apiLogin, apiSearchCustomer, apiUpdateCustomer } from '@api/apiUser';
+import { CustomerFormSearch } from '@typesModel/Customer';
 export const useLogin = () =>{
     return useMutation({
         mutationFn:apiLogin,

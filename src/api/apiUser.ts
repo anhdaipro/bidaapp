@@ -1,24 +1,27 @@
 import axios from 'axios'
-import { UAParser } from 'ua-parser-js';
-import { CustomerForm, CustomerFormSearch, LoginForm } from '../type/model/Customer';
-import axiosInstance from '../hook/axiosInstance';
-
+import { CustomerForm, CustomerFormSearch, LoginForm } from '@typesModel/Customer';
+import axiosInstance, { baseURL } from '@hook/axiosInstance';
+import DeviceInfo from 'react-native-device-info';
 async function getDeviceInfo() {
-    const parser = new UAParser(); // Correct instantiation as a function call
-    const userAgent = parser.getResult();
-    // Lấy thông tin về thiết bị và trình duyệt
-    const deviceInfo = {
-        browser: userAgent.browser.name,
-        browserVersion: userAgent.browser.version,
-        os: userAgent.os.name,
-        device: userAgent.device.model || 'desktop',
-    };
-    return deviceInfo;
+  const deviceInfo = {
+    browser: 'ReactNative', // vì không có trình duyệt trong RN
+    browserVersion: 'N/A',
+    os: DeviceInfo.getSystemName(),         // iOS / Android
+    osVersion: DeviceInfo.getSystemVersion(),
+    device: await DeviceInfo.getModel(),    // tên thiết bị (e.g., Pixel 6, iPhone 14)
+  };
+  return deviceInfo;
 }
 const apiLogin = async ({identifier, password} : LoginForm) => {
-    const deviceInfo = await getDeviceInfo();
-    const response = await axios.post('/api/login', { identifier, password,deviceInfo });
-    return response.data;
+    try {
+        const deviceInfo = await getDeviceInfo();
+        console.log(`${baseURL}/login`)
+        const response = await axios.post(`${baseURL}/login`, { identifier, password,deviceInfo });
+        return response.data;
+    } catch (error) {
+        console.log(error)
+    }
+    
 }
 const apiCreateCustomer = async ({phone, name} : CustomerForm) => {
     const response = await axiosInstance.post('/customer/create', { phone, name });

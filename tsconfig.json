@@ -12,7 +12,8 @@
       "@typesModel/*": ["src/types/model/*"],
       "@api/*": ["src/api/*"],
       "@store/*": ["src/store/*"],
-      "@styles/*": ["src/styles/*"]
+      "@styles/*": ["src/styles/*"],
+      "@navigation/*": ["src/navigation/*"]
     }
   }
 }

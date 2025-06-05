@@ -10,16 +10,17 @@ module.exports = {
           '@form': './src/form',
           '@screens': './src/screens',
           '@utils': './src/utils',
-          // bạn có thể thêm nhiều alias khác như:
           '@hook': './src/hook',
           '@typesModel': './src/types/model',
           '@api': './src/api',
           '@store': './src/store',
+          '@navigation': './src/navigation',
           '@styles': './src/styles',
         },
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       },
-      'react-native-reanimated/plugin',
     ],
+    // ⚠️ Reanimated plugin phải là dòng cuối cùng
+    'react-native-reanimated/plugin',
   ],
 };
