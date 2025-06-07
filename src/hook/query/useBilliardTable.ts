@@ -1,5 +1,5 @@
 import { useQuery,useMutation,useQueryClient } from '@tanstack/react-query';
-import {fetchBilliardTables, fetchBilliardTable, createBilliardTable, updateBilliardTable, deleteBilliardTable, fetchBilliardTableActive} from '../api/apiTable'
+import {fetchBilliardTables, fetchBilliardTable, createBilliardTable, updateBilliardTable, deleteBilliardTable, fetchBilliardTableActive} from '@api/apiTable'
 export const useBilliardTables = () => {
   return useQuery({
     queryKey:['BilliardTables'],
@@ -59,7 +59,6 @@ export const useUpdateBilliardTable = () => {
         // 2. Xóa cache của sản phẩm riêng lẻ nếu có
         queryClient.removeQueries({ queryKey: ['BilliardTable', id] });
         // 3. Thông báo thành công
-        alert('Product deleted successfully!');
       },
       // Tùy chọn: Optimistic updates
       onMutate: async (id) => {

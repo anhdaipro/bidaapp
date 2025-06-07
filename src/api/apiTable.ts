@@ -1,7 +1,7 @@
 
 
 import axiosInstance from "../hook/axiosInstance";
-import { BilliardTableForm } from "../type/model/Table";
+import { BilliardTableForm } from "@typesModel/Table";
 const fetchBilliardTables = async () => {
     const response = await axiosInstance.get(`/billiard-table`);
     return response.data;

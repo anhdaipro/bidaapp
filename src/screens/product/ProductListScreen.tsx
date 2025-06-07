@@ -347,7 +347,7 @@ const styles = StyleSheet.create({
   },
   statusButton: {
     flex: 1,
-    backgroundColor: '#1976d2',
+    backgroundColor: '#fd7e14', // hoặc #6c757d tùy mục đích
     padding: 8,
     borderRadius: 4,
     alignItems: 'center',
@@ -399,17 +399,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   smallButton: {
-    backgroundColor: 'transparent',
-    borderWidth: 1,
-    borderColor: '#1976d2',
-    padding: 6,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
     borderRadius: 4,
-    marginBottom: 8,
-    alignItems: 'center',
+    backgroundColor: '#007bff', // mặc định cho "Chỉnh sửa"
   },
   smallButtonText: {
-    color: '#fff',
-    fontSize: 12,
+    color: '#ffffff',
+    fontSize: 14,
+    fontWeight: '500',
   },
   pagination: {
     flexDirection: 'row',
