@@ -1,17 +1,16 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ProductListScreen from './ProductListScreen';
-import CreateScreen from './CreateScreen';
-import UpdateScreen from './UpdateScreen';
 import BilliardTableList from './BilliardTableList';
+import CreateBilliardTable from './CreateBilliardTable';
+import UpdateBilliardTable from './UpdateBilliardTable';
 const Stack = createNativeStackNavigator();
-const ProductsScreen = () => {
+const BilliardTableScreen = () => {
   return (
       <Stack.Navigator screenOptions={{ headerShown: true }}>
-        <Stack.Screen name="Index" component={BilliardTableList} options={{ headerShown: false }} />
-        <Stack.Screen name="ProductCreate" component={CreateScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="ProductUpdate" component={UpdateScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="BilliardTableList" component={BilliardTableList} options={{ headerShown: false }} />
+        <Stack.Screen name="BilliardTableCreate" component={CreateBilliardTable} options={{ headerShown: false }} />
+        <Stack.Screen name="BilliardTableUpdate" component={UpdateBilliardTable} options={{ headerShown: false }} />
       </Stack.Navigator>
     );
 };
 
-export default ProductsScreen;
+export default BilliardTableScreen;

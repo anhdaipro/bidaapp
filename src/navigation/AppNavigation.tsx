@@ -6,10 +6,12 @@ import { DrawerNavigationOptions } from '@react-navigation/drawer';
 import Sidebar from '@components/Sidebar';
 import ProductsScreen from '@screens/product/ProductsScreen';
 import Header from '@components/Header';
+import BilliardTableScreen from '@screens/billiardTable/BilliardTableScreen';
 
 // Định nghĩa các route name và param (nếu có)
 export type DrawerParamList = {
   Products: undefined;
+  Tables:undefined;
   // Thêm các màn hình khác, ví dụ:
   // Settings: undefined;
   // Profile: { userId: string };
@@ -37,6 +39,7 @@ const AppNavigator: React.FC = () => {
         })}
       >
         <Drawer.Screen name="Products" component={ProductsScreen} />
+        <Drawer.Screen name="Tables" component={BilliardTableScreen} />
         {/* Thêm các màn hình khác */}
       </Drawer.Navigator>
    

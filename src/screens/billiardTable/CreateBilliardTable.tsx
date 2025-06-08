@@ -1,17 +1,15 @@
-import Form from "@components/product/Form"
-import { STATUS_ACTIVE } from "@form/product";
+import Form from "@conponents/Form";
 
-const CreateScreen = () =>{
-    const product = {
-    id:0,
-    name: "",
-    status:STATUS_ACTIVE,
-    image: '',
-    price: 0,
-    categoryId: 0,
+const CreateBilliardTable:React.FC = () => {
+    const table = {
+        status: 0,
+        tableNumber: 1,
+        type: 0,
+        hourlyRate: 0,
+    };
+  
+    return (<Form table={table}/>)
+   
   };
- return (
-    <Form product={product}/>
- )
-}
-export default CreateScreen
+  
+  export default CreateBilliardTable;
